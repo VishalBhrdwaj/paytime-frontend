@@ -29,7 +29,7 @@ export const SendMoney = () => {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:3000/api/v1/account/transfer',
+      url: `${import.meta.env.VITE_BACKEND_URL}/api/v1/account/transfer`,
       headers: { 
         'Content-Type': 'application/json', 
         'Authorization': `Bearer ${localStorage.getItem("token")}`

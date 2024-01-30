@@ -53,7 +53,7 @@ const rows = [
 export default function History() {
     const [transactions,setTransactions]=useState([]);
     useEffect(()=>{   
-    axios.get("http://localhost:3000/api/v1/history/",{
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/history/`,{
             headers:{
             "Authorization":`Bearer ${localStorage.getItem("token")}`
         }}).then(res=>{

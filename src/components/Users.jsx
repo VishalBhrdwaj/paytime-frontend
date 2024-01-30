@@ -7,15 +7,15 @@ export const Users = ({balance}) => {
     const [loading,setLoading]=useState(true);
 
     const [users, setUsers] = useState([{
-        firstName: "Harkirat",
-        lastName: "Singh",
+        firstName: "Vishal",
+        lastName: "Bhardwaj",
         _id: 1
     }]);
    
     const [searchUser,setSearchUser]=useState("");
     const getUsers=async()=>{
        
-        const response=await axios.get("http://localhost:3000/api/v1/user/bulk?filter="+searchUser,{headers:{
+        const response=await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/bulk?filter=`+searchUser,{headers:{
             "Authorization":`Bearer ${localStorage.getItem("token")}`
         }})
         setUsers(response.data?.users)

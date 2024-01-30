@@ -13,7 +13,8 @@ export const Signin = () => {
   const navigate=useNavigate();
 
   const handleSubmit=async()=>{
-    const response=await axios.post("http://localhost:3000/api/v1/user/signin",{username,password});
+    console.log(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/signin`)
+    const response=await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/signin`,{username,password});
     console.log(response.data)
     localStorage.setItem("token",response?.data?.token);
     navigate("/dashboard");

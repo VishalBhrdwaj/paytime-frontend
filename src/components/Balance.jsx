@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 export const Balance = ({ value,showHistory,setShowHistory}) => {
   return (
     <div className="flex justify-between border-b-2 border-black pb-4">
